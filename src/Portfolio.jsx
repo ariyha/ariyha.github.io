@@ -5,6 +5,7 @@ import { ChevronDown, Github, Linkedin, Mail, ExternalLink, Award, Code, Termina
 const Portfolio = () => {
   const darkMode = true;
   const [currentSection, setCurrentSection] = useState('home');
+  const [typedText, setTypedText] = useState('');
   const [showEasterEgg, setShowEasterEgg] = useState(false);
   const [particles, setParticles] = useState([]);
   const [connections, setConnections] = useState([]);
@@ -17,6 +18,22 @@ const Portfolio = () => {
   const animationFrameRef = useRef(null);
   
   // Enhanced mouse handling with trail
+  const fullText = "const developer = new NithishAriyha();";
+
+  // Typing animation
+  useEffect(() => {
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index < fullText.length) {
+        setTypedText(fullText.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 100);
+    return () => clearInterval(timer);
+  }, []);
+  
   const handleMouseMove = useCallback((e) => {
     const newPosition = { x: e.clientX, y: e.clientY };
     setCursorPosition(newPosition);
@@ -383,7 +400,7 @@ const Portfolio = () => {
                   <span className="ml-4 text-gray-400 text-sm">terminal.js</span>
                 </div>
                 <div className="text-green-400">
-                  <span className="text-blue-400">$</span> const developer = new NithishAriyha();
+                  <span className="text-blue-400">$</span> {typedText}
                 </div>
               </div>
             </div>
