@@ -20,19 +20,26 @@ const Portfolio = () => {
   // Enhanced mouse handling with trail
   const fullText = "const developer = new NithishAriyha();";
 
-  // Typing animation
-  useEffect(() => {
-    let index = 0;
-    const timer = setInterval(() => {
-      if (index < fullText.length) {
-        setTypedText(fullText.slice(0, index + 1));
-        index++;
-      } else {
-        clearInterval(timer);
-      }
-    }, 100);
-    return () => clearInterval(timer);
-  }, []);
+  // Typing animation// Typing animation with forward & backward loop
+useEffect(() => {
+  let index = 0;
+  let direction = 1; // 1 = forward, -1 = backward
+
+  const timer = setInterval(() => {
+    setTypedText(fullText.slice(0, index));
+
+    if (direction === 1 && index === fullText.length) {
+      direction = -1; // switch to deleting
+    } else if (direction === -1 && index === 0) {
+      direction = 1; // switch to typing
+    }
+
+    index += direction;
+  }, 100);
+
+  return () => clearInterval(timer);
+}, []);
+
   
   const handleMouseMove = useCallback((e) => {
     const newPosition = { x: e.clientX, y: e.clientY };
