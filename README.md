@@ -172,4 +172,4 @@ For questions or suggestions, feel free to reach out through the contact form on
 
 ---
 
-Built with ❤️ using React and modern web technologies.
+Built with ❤️ using React and modern web technologies and **VIBE CODING**.
