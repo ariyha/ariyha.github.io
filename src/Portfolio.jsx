@@ -143,10 +143,10 @@ const Portfolio = () => {
     observerRef.current = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fade-in');
+          entry.target.classList.add('is-visible');
         }
       });
-    });
+    }, { threshold: 0.1 });
 
     const sections = document.querySelectorAll('.observe-section');
     sections.forEach(section => observerRef.current?.observe(section));
@@ -215,9 +215,9 @@ const Portfolio = () => {
   ];
 
   return (
-    <div className="min-h-screen transition-colors duration-500">
+    <div className="min-h-screen transition-colors duration-500 bg-gray-900">
       {/* Enhanced Particle System */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+      <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
         {/* Particle connections */}
         <svg className="absolute inset-0 w-full h-full">
           {connections.map((connection, i) => (
@@ -585,8 +585,43 @@ const Portfolio = () => {
       )}
 
       <style jsx>{`
+        html {
+          scroll-behavior: smooth;
+        }
+
+        .observe-section {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .observe-section.is-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
         .animate-fade-in {
-          animation: fade-in 0.8s ease-out forwards;
+          animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes codeRain {
+          from {
+            transform: translateY(-100%);
+          }
+          to {
+            transform: translateY(100vh);
+          }
         }
       `}</style>
     </div>
