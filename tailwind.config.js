@@ -7,8 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
         'inter': ['Inter', 'sans-serif'],
-        'mono': ['JetBrains Mono', 'monospace'],
+        'mono': ['Fira Code', 'monospace'],
       },
       animation: {
         'fade-in': 'fade-in 0.8s ease-out forwards',

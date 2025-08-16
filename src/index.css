@@ -22,7 +22,7 @@ body {
 }
 
 code {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Fira Code', monospace;
 }
 
 /* Custom animations */
@@ -106,6 +106,6 @@ code {
 
 
 ::selection {
-  background-color: #3b82f6;
+  background-color: #6138b3;
   color: white;
 }

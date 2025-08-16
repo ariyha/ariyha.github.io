@@ -1,70 +1,175 @@
-# Getting Started with Create React App
+# Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, interactive developer portfolio showcasing AI research and full-stack development projects. Built with React, Vite, and styled with Tailwind CSS, featuring smooth animations and an engaging user experience.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- **Interactive Design**: Smooth animations powered by Framer Motion
+- **Modern Tech Stack**: React 18, Vite, Tailwind CSS
+- **Responsive Layout**: Optimized for all device sizes
+- **Dynamic Animations**: Particle effects, cursor trails, and typing animations
+- **Dark Mode UI**: Professional dark theme design
+- **Performance Optimized**: Fast loading with Vite bundler
 
-### `npm start`
+## 📁 Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+portfolio/
+├── public/                 # Static assets
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+├── src/                    # Source code
+│   ├── App.css            # Legacy styles (if needed)
+│   ├── App.test.js        # Test files
+│   ├── index.css          # Global styles and Tailwind imports
+│   ├── index.js           # Legacy entry point
+│   ├── main.jsx           # Main React entry point
+│   ├── Portfolio.jsx      # Main portfolio component
+│   └── logo.svg           # React logo
+├── index.html             # Vite entry HTML
+├── package.json           # Dependencies and scripts
+├── postcss.config.js      # PostCSS configuration
+├── tailwind.config.js     # Tailwind CSS configuration
+├── vite.config.js         # Vite configuration
+└── README.md              # This file
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+- **Frontend Framework**: React 18
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion, React Spring
+- **Icons**: Lucide React
+- **Development**: ESLint for code quality
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📦 Dependencies
 
-### `npm run build`
+### Core Dependencies
+- `react` & `react-dom` - React framework
+- `framer-motion` - Animation library
+- `@react-spring/web` & `react-spring` - Spring animations
+- `lucide-react` - Icon library
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Development Dependencies
+- `vite` - Build tool and dev server
+- `@vitejs/plugin-react` - React plugin for Vite
+- `tailwindcss` - Utility-first CSS framework
+- `autoprefixer` & `postcss` - CSS processing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+Make sure you have Node.js installed on your machine (version 14 or higher recommended).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd portfolio
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Running the Project
 
-## Learn More
+#### Development Mode
+Start the development server with hot reload:
+```bash
+npm run dev
+```
+The application will be available at `http://localhost:5173`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Build for Production
+Create an optimized production build:
+```bash
+npm run build
+```
+The built files will be in the `dist` directory.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Preview Production Build
+Preview the production build locally:
+```bash
+npm run preview
+```
 
-### Code Splitting
+#### Code Linting
+Run ESLint to check code quality:
+```bash
+npm run lint
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### Deploy (if configured)
+Deploy to GitHub Pages:
+```bash
+npm run deploy
+```
 
-### Analyzing the Bundle Size
+## 🎨 Customization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Styling
+- Modify `tailwind.config.js` to customize the design system
+- Edit `src/index.css` for global styles
+- Component-specific styles are handled with Tailwind classes in `Portfolio.jsx`
 
-### Making a Progressive Web App
+### Content
+- Update personal information, projects, and experience in `src/Portfolio.jsx`
+- Replace logos and images in the `public` directory
+- Modify the typing animation text and other dynamic content
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Animations
+- Framer Motion configurations can be adjusted in `Portfolio.jsx`
+- Particle effects and cursor trails are customizable through component state
 
-### Advanced Configuration
+## 🔧 Configuration Files
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **`vite.config.js`**: Vite bundler configuration
+- **`tailwind.config.js`**: Tailwind CSS customization
+- **`postcss.config.js`**: PostCSS plugins configuration
+- **`package.json`**: Project metadata and scripts
 
-### Deployment
+## 🌐 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The project is configured for easy deployment to various platforms:
 
-### `npm run build` fails to minify
+- **GitHub Pages**: Use `npm run deploy` (requires gh-pages package)
+- **Vercel**: Connect your repository for automatic deployments
+- **Netlify**: Drag and drop the `dist` folder after running `npm run build`
+- **Other platforms**: Upload the contents of `dist` folder
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📱 Browser Support
+
+The portfolio is optimized for modern browsers:
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 📧 Contact
+
+For questions or suggestions, feel free to reach out through the contact form on the portfolio or via the social links provided.
+
+---
+
+Built with ❤️ using React and modern web technologies.
