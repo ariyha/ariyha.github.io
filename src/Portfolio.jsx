@@ -140,13 +140,29 @@ const Portfolio = () => {
     };
   }, [handleMouseMove, handleScroll, scrollY]);
 
-  // Easter egg
+  // Easter egg (Konami code)
   useEffect(() => {
+    const konamiSequence = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+    let konamiPosition = 0;
+
     const handleKeyPress = (e) => {
-      if (e.key === 'f' || e.key === 'F') {
-        setShowEasterEgg(true);
+      // Normalize single-character keys to lowercase, leave Arrow... keys as-is
+      const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+      const expected = konamiSequence[konamiPosition];
+
+      if (key === expected) {
+        konamiPosition += 1;
+
+        if (konamiPosition === konamiSequence.length) {
+          setShowEasterEgg(true);
+          konamiPosition = 0; // reset after successful entry
+        }
+      } else {
+        // Reset position — but if this key matches the first key, start from 1
+        konamiPosition = key === konamiSequence[0] ? 1 : 0;
       }
     };
+
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, []);
@@ -869,7 +885,7 @@ const Portfolio = () => {
             </div>
             <p className="font-mono">&copy; 2025 Nithish Ariyha K. Built with React & Tailwind CSS.</p>
             <p className="text-sm mt-2 font-mono">
-              <span className="text-yellow-400">Tip:</span> Press <kbd className="bg-gray-700 px-2 py-1 rounded text-xs">'F'</kbd> for a surprise! 🎉
+              <span className="text-yellow-400">Tip:</span> Try the Konami code to unlock a surprise! 🎉
             </p>
           </div>
         </footer>
