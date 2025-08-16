@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A modern developer portfolio showcasing AI research and full-stack development projects",
   "private": true,
-  "homepage": "https://ariyha.github.io/portfolio",
+  "homepage": "https://ariyha.github.io",
   "dependencies": {
     "@react-spring/web": "^10.0.1",
     "framer-motion": "^12.23.12",
