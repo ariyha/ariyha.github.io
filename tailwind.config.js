@@ -11,6 +11,9 @@ export default {
         'inter': ['Inter', 'sans-serif'],
         'mono': ['Fira Code', 'monospace'],
       },
+      colors: {
+        'custom-dark': '#0D1B2A',
+      },
       animation: {
         'fade-in': 'fade-in 0.8s ease-out forwards',
         'float': 'float 6s ease-in-out infinite',

@@ -8,7 +8,6 @@ const Portfolio = () => {
   const [typedText, setTypedText] = useState('');
   const [showEasterEgg, setShowEasterEgg] = useState(false);
   const [particles, setParticles] = useState([]);
-  const [connections, setConnections] = useState([]);
   const [scrollY, setScrollY] = useState(0);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [cursorTrail, setCursorTrail] = useState([]);
@@ -230,9 +229,9 @@ useEffect(() => {
     "Languages": [
       { name: "Java", icon: "☕", color: "text-orange-400" },
       { name: "Python", icon: "🐍", color: "text-yellow-400" },
-      { name: "C++", icon: "⚡", color: "text-blue-400" },
+      { name: "C++", icon: "⚡", color: "text-teal-400" },
       { name: "JavaScript", icon: "🟨", color: "text-yellow-300" },
-      { name: "Kotlin", icon: "🎯", color: "text-purple-400" },
+      { name: "Kotlin", icon: "🎯", color: "text-sky-400" },
       { name: "Dart", icon: "🎯", color: "text-cyan-400" },
       { name: "Rust", icon: "🦀", color: "text-orange-500" }
     ],
@@ -241,21 +240,21 @@ useEffect(() => {
       { name: "Next.js", icon: "▲", color: "text-white" },
       { name: "Flask", icon: "🌶️", color: "text-red-400" },
       { name: "PyTorch", icon: "🔥", color: "text-orange-400" },
-      { name: "Flutter", icon: "💙", color: "text-blue-400" }
+      { name: "Flutter", icon: "💙", color: "text-teal-400" }
     ],
     "Databases": [
-      { name: "PostgreSQL", icon: "🐘", color: "text-blue-500" },
+      { name: "PostgreSQL", icon: "🐘", color: "text-teal-500" },
       { name: "MongoDB", icon: "🍃", color: "text-green-400" },
       { name: "Redis", icon: "🔴", color: "text-red-500" }
     ],
     "DevOps": [
       { name: "Git", icon: "🌿", color: "text-orange-400" },
-      { name: "Azure", icon: "☁️", color: "text-blue-400" },
-      { name: "Docker", icon: "🐳", color: "text-blue-500" },
+      { name: "Azure", icon: "☁️", color: "text-teal-400" },
+      { name: "Docker", icon: "🐳", color: "text-teal-500" },
       { name: "GitLab CI/CD", icon: "🔄", color: "text-orange-500" }
     ],
     "AI/ML": [
-      { name: "Machine Learning", icon: "🤖", color: "text-purple-400" },
+      { name: "Machine Learning", icon: "🤖", color: "text-sky-400" },
       { name: "Deep Learning", icon: "🧠", color: "text-pink-400" },
       { name: "NLP", icon: "💬", color: "text-green-400" },
       { name: "Computer Vision", icon: "👁️", color: "text-cyan-400" }
@@ -291,24 +290,10 @@ useEffect(() => {
   ];
 
   return (
-    <div className="min-h-screen transition-colors duration-500 bg-gray-900">
+    <div className="min-h-screen transition-colors duration-500 bg-custom-dark">
       {/* Enhanced Comet Particle System */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         {/* Comet connections */}
-        <svg className="absolute inset-0 w-full h-full">
-          {connections.map((connection, i) => (
-            <line
-              key={i}
-              x1={connection.x1}
-              y1={connection.y1}
-              x2={connection.x2}
-              y2={connection.y2}
-              stroke="rgba(255, 255, 255, 0.1)"
-              strokeWidth="1"
-              opacity={connection.opacity}
-            />
-          ))}
-        </svg>
         
         {/* Moving comets with trails */}
         {particles.map(comet => (
@@ -388,17 +373,17 @@ useEffect(() => {
 
       <div className="text-white relative z-10 min-h-screen">
         {/* Navigation */}
-        <nav className="fixed top-0 w-full bg-gray-900/95 backdrop-blur-md z-40 border-b border-gray-700">
+        <nav className="fixed top-0 w-full bg-custom-dark/95 backdrop-blur-md z-40 border-b border-gray-700">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-4">
-              <div className="font-mono text-lg font-bold text-blue-400">
+              <div className="font-mono text-lg font-bold text-teal-400">
                 &lt;NithishAriyha /&gt;
               </div>
               <div className="hidden md:flex space-x-8">
                 {['Home', 'About', 'Experience', 'Projects', 'Publications', 'Contact'].map(item => (
                   <button
                     key={item}
-                    className="hover:text-blue-400 transition-colors font-medium"
+                    className="hover:text-teal-400 transition-colors font-medium"
                     onClick={() => document.getElementById(item.toLowerCase())?.scrollIntoView({ behavior: 'smooth' })}
                   >
                     {item}
@@ -423,12 +408,12 @@ useEffect(() => {
                   <span className="ml-4 text-gray-400 text-sm">terminal.js</span>
                 </div>
                 <div className="text-green-400">
-                  <span className="text-blue-400">$</span> {typedText}
+                  <span className="text-teal-400">$</span> {typedText}
                 </div>
               </div>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-poppins">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-teal-600 to-slate-600 bg-clip-text text-transparent font-poppins">
               Nithish Ariyha K
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 font-inter font-medium">
@@ -437,31 +422,31 @@ useEffect(() => {
             <div className="flex justify-center space-x-6 mb-12">
               <a 
                 href="https://github.com/ariyha" 
-                className="p-3 bg-gray-700 rounded-full hover:bg-gray-600 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25 group"
+                className="p-3 bg-gray-700 rounded-full hover:bg-gray-600 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-teal-500/25 group"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
-                <Github size={24} className="group-hover:text-blue-400 transition-colors" />
+                <Github size={24} className="group-hover:text-teal-400 transition-colors" />
               </a>
               <a 
                 href="https://linkedin.com/in/nithishariyha" 
-                className="p-3 bg-gray-700 rounded-full hover:bg-gray-600 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25 group"
+                className="p-3 bg-gray-700 rounded-full hover:bg-gray-600 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-teal-500/25 group"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
-                <Linkedin size={24} className="group-hover:text-blue-400 transition-colors" />
+                <Linkedin size={24} className="group-hover:text-teal-400 transition-colors" />
               </a>
               <a 
                 href="mailto:nithishariyha02467@gmail.com" 
-                className="p-3 bg-gray-700 rounded-full hover:bg-gray-600 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25 group"
+                className="p-3 bg-gray-700 rounded-full hover:bg-gray-600 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-teal-500/25 group"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
-                <Mail size={24} className="group-hover:text-blue-400 transition-colors" />
+                <Mail size={24} className="group-hover:text-teal-400 transition-colors" />
               </a>
             </div>
             <div className="animate-bounce">
-              <ChevronDown size={32} className="mx-auto text-blue-400" />
+              <ChevronDown size={32} className="mx-auto text-teal-400" />
             </div>
           </div>
         </section>
@@ -479,7 +464,7 @@ useEffect(() => {
                 <span className="ml-4 text-gray-400 text-sm">about.js</span>
               </div>
               <div className="text-green-400">
-                <span className="text-blue-400">const</span> <span className="text-purple-400">developer</span> = {'{'}
+                <span className="text-teal-400">const</span> <span className="text-sky-400">developer</span> = {'{'}
                 <br />
                 &nbsp;&nbsp;<span className="text-yellow-400">name</span>: <span className="text-green-300">"Nithish Ariyha K"</span>,
                 <br />
@@ -493,10 +478,10 @@ useEffect(() => {
               </div>
             </div>
             <h2 className="text-4xl font-bold mb-12 text-center font-poppins">
-              <span className="text-blue-400">&lt;</span>
+              <span className="text-teal-400">&lt;</span>
               <User className="inline mx-2" />
               <span className="text-green-400">About</span>
-              <span className="text-blue-400"> /&gt;</span>
+              <span className="text-teal-400"> /&gt;</span>
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               <div className="space-y-6">
@@ -512,7 +497,7 @@ useEffect(() => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button 
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center font-mono border border-blue-500/50 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/25 group hover:scale-105"
+                    className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center font-mono border border-teal-500/50 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/25 group hover:scale-105"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                   >
@@ -522,21 +507,21 @@ useEffect(() => {
                 </div>
               </div>
               <div className="space-y-6">
-                <div className="bg-gray-800/90 p-6 rounded-lg shadow-lg border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 group">
+                <div className="bg-gray-800/90 p-6 rounded-lg shadow-lg border border-teal-500/20 hover:border-teal-500/40 transition-all duration-300 group">
                   <div className="flex items-center mb-4">
-                    <GraduationCap className="text-blue-400 mr-3 flex-shrink-0" size={24} />
+                    <GraduationCap className="text-teal-400 mr-3 flex-shrink-0" size={24} />
                     <h3 className="text-xl font-bold font-mono">// Education</h3>
                   </div>
                   <div className="space-y-3 font-mono">
-                    <div className="pl-4 border-l-2 border-blue-500/30 group-hover:border-blue-500/60 transition-colors">
+                    <div className="pl-4 border-l-2 border-teal-500/30 group-hover:border-teal-500/60 transition-colors">
                       <p className="font-semibold text-green-400">B.Tech Computer Science (AI)</p>
                       <p className="text-gray-400 text-sm">Amrita Vishwa Vidyapeetham</p>
                     </div>
                   </div>
                 </div>
-                <div className="bg-gray-800/90 p-6 rounded-lg shadow-lg border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 group">
+                <div className="bg-gray-800/90 p-6 rounded-lg shadow-lg border border-teal-500/20 hover:border-teal-500/40 transition-all duration-300 group">
                   <div className="flex items-center mb-4">
-                    <Award className="text-purple-400 mr-3 flex-shrink-0" size={24} />
+                    <Award className="text-sky-400 mr-3 flex-shrink-0" size={24} />
                     <h3 className="text-xl font-bold font-mono">// Achievements</h3>
                   </div>
                   <div className="space-y-2 font-mono">
@@ -547,7 +532,7 @@ useEffect(() => {
                       <span className="text-green-400 mr-2 flex-shrink-0">✓</span><span className="text-yellow-400">200+</span> LeetCode Problems
                     </p>
                     <p className="flex items-center pl-4 border-l-2 border-purple-500/30 group-hover:border-purple-500/60 transition-colors text-sm">
-                      <span className="text-green-400 mr-2 flex-shrink-0">✓</span>Best Paper Award <span className="text-blue-400"> &nbsp;(ICBSII)</span>
+                      <span className="text-green-400 mr-2 flex-shrink-0">✓</span>Best Paper Award <span className="text-teal-400"> &nbsp;(ICBSII)</span>
                     </p>
                   </div>
                 </div>
@@ -569,29 +554,29 @@ useEffect(() => {
                 <span className="ml-4 text-gray-400 text-sm">skills.json</span>
               </div>
               <div className="text-green-400">
-                <span className="text-blue-400">$</span> cat skills.json | jq '.languages[]'
+                <span className="text-teal-400">$</span> cat skills.json | jq '.languages[]'
                 <br />
                 <span className="animate-pulse text-yellow-400">|</span>
               </div>
             </div>
             <h2 className="text-4xl font-bold mb-12 text-center font-poppins">
-              <span className="text-blue-400">&lt;</span>
+              <span className="text-teal-400">&lt;</span>
               <Code className="inline mx-2" />
               <span className="text-green-400">Technical Skills</span>
-              <span className="text-blue-400"> /&gt;</span>
+              <span className="text-teal-400"> /&gt;</span>
             </h2>
             <div className="space-y-8">
               {Object.entries(skills).map(([category, items], index) => (
-                <div key={category} className="bg-gray-900/90 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-600/30 hover:border-blue-500/50 group">
+                <div key={category} className="bg-gray-900/90 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-600/30 hover:border-teal-500/50 group">
                   <div className="flex items-center mb-6">
                     <span className="text-green-400 font-mono mr-3 text-lg">{index + 1}.</span>
-                    <h3 className="text-xl font-bold text-blue-400 font-mono">/{category.toLowerCase()}</h3>
+                    <h3 className="text-xl font-bold text-teal-400 font-mono">/{category.toLowerCase()}</h3>
                   </div>
                   <div className="flex flex-wrap gap-4 justify-start">
                     {items.map((skill, skillIndex) => (
                       <div 
                         key={skill.name} 
-                        className="bg-gray-800/70 p-4 rounded-lg hover:bg-gray-700/70 transition-all duration-300 group-hover:transform group-hover:scale-105 border border-gray-600/30 hover:border-blue-400/50 flex flex-col items-center justify-center text-center cursor-pointer aspect-square"
+                        className="bg-gray-800/70 p-4 rounded-lg hover:bg-gray-700/70 transition-all duration-300 group-hover:transform group-hover:scale-105 border border-gray-600/30 hover:border-teal-400/50 flex flex-col items-center justify-center text-center cursor-pointer aspect-square"
                         style={{
                           width: '100px',
                           height: '100px',
@@ -630,16 +615,16 @@ useEffect(() => {
                 <span className="ml-4 text-gray-400 text-sm">experience.log</span>
               </div>
               <div className="text-green-400">
-                <span className="text-blue-400">$</span> grep -r "achievements" work_history/
+                <span className="text-teal-400">$</span> grep -r "achievements" work_history/
                 <br />
                 <span className="animate-pulse text-yellow-400">|</span>
               </div>
             </div>
             <h2 className="text-4xl font-bold mb-12 text-center font-poppins">
-              <span className="text-blue-400">&lt;</span>
+              <span className="text-teal-400">&lt;</span>
               <Briefcase className="inline mx-2" />
               <span className="text-green-400">Experience</span>
-              <span className="text-blue-400"> /&gt;</span>
+              <span className="text-teal-400"> /&gt;</span>
             </h2>
             <div className="space-y-8">
               {experience.map((exp, index) => (
@@ -647,9 +632,9 @@ useEffect(() => {
                   <div className="bg-gray-900/50 rounded-lg p-4 mb-6 font-mono border-l-4 border-green-500">
                     <div className="flex items-center mb-2">
                       <span className="text-green-400 mr-2">➜</span>
-                      <span className="text-blue-400">class</span>
+                      <span className="text-teal-400">class</span>
                       <span className="text-white ml-2">{exp.role.replace(/\s+/g, '')}</span>
-                      <span className="text-purple-400 ml-2">extends</span>
+                      <span className="text-sky-400 ml-2">extends</span>
                       <span className="text-yellow-400 ml-2">Developer</span>
                     </div>
                     <div className="text-gray-400 text-sm">
@@ -658,10 +643,10 @@ useEffect(() => {
                   </div>
                   <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
                     <div>
-                      <h3 className="text-2xl font-bold font-mono text-blue-400">{exp.role}</h3>
+                      <h3 className="text-2xl font-bold font-mono text-teal-400">{exp.role}</h3>
                       <p className="text-xl text-green-400 font-mono">@{exp.company}</p>
                     </div>
-                    <span className="bg-blue-900/50 text-blue-200 px-4 py-2 rounded-full text-sm font-medium font-mono border border-blue-500/30">
+                    <span className="bg-teal-900/50 text-teal-200 px-4 py-2 rounded-full text-sm font-medium font-mono border border-teal-500/30">
                       {exp.period}
                     </span>
                   </div>
@@ -695,16 +680,16 @@ useEffect(() => {
                 <span className="ml-4 text-gray-400 text-sm">projects.md</span>
               </div>
               <div className="text-green-400">
-                <span className="text-blue-400">$</span> ls -la ./projects/ | grep "featured"
+                <span className="text-teal-400">$</span> ls -la ./projects/ | grep "featured"
                 <br />
                 <span className="animate-pulse text-yellow-400">|</span>
               </div>
             </div>
             <h2 className="text-4xl font-bold mb-12 text-center font-poppins">
-              <span className="text-blue-400">&lt;</span>
+              <span className="text-teal-400">&lt;</span>
               <Terminal className="inline mx-2" />
               <span className="text-green-400">Featured Projects</span>
-              <span className="text-blue-400"> /&gt;</span>
+              <span className="text-teal-400"> /&gt;</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
               {projects.map((project, index) => (
@@ -721,7 +706,7 @@ useEffect(() => {
                   </div>
                   <div className="p-6 flex-1 flex flex-col">
                     <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-xl font-bold font-mono text-blue-400 truncate flex-1 mr-2">{project.title}</h3>
+                      <h3 className="text-xl font-bold font-mono text-teal-400 truncate flex-1 mr-2">{project.title}</h3>
                       <a 
                         href={project.github} 
                         className="text-gray-400 hover:text-green-400 transition-colors group-hover:animate-pulse flex-shrink-0 hover:scale-110 transition-transform duration-300"
@@ -748,7 +733,7 @@ useEffect(() => {
                       <div className="text-yellow-400 font-mono text-xs mb-2">Tech Stack:</div>
                       <div className="flex flex-wrap gap-2">
                         {project.tech.map((tech, techIndex) => (
-                          <span key={tech} className="bg-blue-900/50 text-blue-200 px-2 py-1 rounded text-xs font-medium font-mono border border-blue-500/30 hover:border-blue-500/60 transition-colors">
+                          <span key={tech} className="bg-teal-900/50 text-teal-200 px-2 py-1 rounded text-xs font-medium font-mono border border-teal-500/30 hover:border-teal-500/60 transition-colors">
                             {tech}
                           </span>
                         ))}
@@ -774,16 +759,16 @@ useEffect(() => {
                 <span className="ml-4 text-gray-400 text-sm">research.bib</span>
               </div>
               <div className="text-green-400">
-                <span className="text-blue-400">$</span> bibtex publications.bib && pdflatex research.tex
+                <span className="text-teal-400">$</span> bibtex publications.bib && pdflatex research.tex
                 <br />
                 <span className="animate-pulse text-yellow-400">|</span>
               </div>
             </div>
             <h2 className="text-4xl font-bold mb-12 text-center font-poppins">
-              <span className="text-blue-400">&lt;</span>
+              <span className="text-teal-400">&lt;</span>
               <FileText className="inline mx-2" />
               <span className="text-green-400">Research & Publications</span>
-              <span className="text-blue-400"> /&gt;</span>
+              <span className="text-teal-400"> /&gt;</span>
             </h2>
             <div className="space-y-6">
               {publications.map((pub, index) => (
@@ -801,7 +786,7 @@ useEffect(() => {
                   </div>
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold mb-2 text-blue-400 group-hover:text-blue-300 transition-colors">{pub.title}</h3>
+                      <h3 className="text-lg font-bold mb-2 text-teal-400 group-hover:text-teal-300 transition-colors">{pub.title}</h3>
                       <p className="text-gray-300 mb-3 font-mono text-sm">
                         <span className="text-green-400">📄</span> {pub.venue}
                       </p>
@@ -835,7 +820,7 @@ useEffect(() => {
                 <span className="ml-4 text-gray-400 text-sm">contact.sh</span>
               </div>
               <div className="text-green-400">
-                <span className="text-blue-400">$</span> ./connect.sh --developer nithish_ariyha
+                <span className="text-teal-400">$</span> ./connect.sh --developer nithish_ariyha
                 <br />
                 <span className="text-gray-400">Establishing connection...</span>
                 <br />
@@ -843,14 +828,14 @@ useEffect(() => {
               </div>
             </div>
             <h2 className="text-4xl font-bold mb-12 font-poppins">
-              <span className="text-blue-400">&lt;</span>
+              <span className="text-teal-400">&lt;</span>
               <Mail className="inline mx-2" />
               <span className="text-green-400">Let's Connect</span>
-              <span className="text-blue-400"> /&gt;</span>
+              <span className="text-teal-400"> /&gt;</span>
             </h2>
             <div className="bg-gray-900/50 rounded-lg p-6 mb-8 font-mono border border-green-500/30">
               <div className="text-green-400 mb-4">
-                <span className="text-blue-400">const</span> <span className="text-purple-400">contact</span> = {'{'}
+                <span className="text-teal-400">const</span> <span className="text-sky-400">contact</span> = {'{'}
               </div>
               <div className="pl-4 space-y-2 text-left">
                 <div><span className="text-yellow-400">email</span>: <span className="text-green-300">"nithishariyha02467@gmail.com"</span>,</div>
@@ -862,7 +847,7 @@ useEffect(() => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="mailto:nithishariyha02467@gmail.com" 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center font-mono border border-blue-500/50 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/25 group hover:scale-105"
+                className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center font-mono border border-teal-500/50 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/25 group hover:scale-105"
                 onMouseEnter={() => setIsHovering(true)}
                 onMouseLeave={() => setIsHovering(false)}
               >
@@ -887,12 +872,12 @@ useEffect(() => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-gray-800/50 rounded-lg p-4 mb-4 font-mono border border-gray-600/30">
               <div className="text-green-400">
-                <span className="text-blue-400">console.log</span>(<span className="text-green-300">"Thanks for visiting! Built with ❤️ and lots of ☕"</span>);
+                <span className="text-teal-400">console.log</span>(<span className="text-green-300">"Thanks for visiting! Built with ❤️ and lots of ☕"</span>);
               </div>
             </div>
             <p className="font-mono">&copy; 2025 Nithish Ariyha K. Built with React & Tailwind CSS.</p>
             <p className="text-sm mt-2 font-mono">
-              <span className="text-yellow-400">Tip:</span> Try the Konami code to unlock a surprise! 🎉
+              <span className="text-yellow-400">Tip:</span> Try the Konami code
             </p>
           </div>
         </footer>
@@ -914,7 +899,7 @@ useEffect(() => {
             </p>
             <button 
               onClick={() => setShowEasterEgg(false)}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors"
+              className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded-lg transition-colors"
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
             >
