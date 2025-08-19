@@ -59,6 +59,13 @@ useEffect(() => {
   // Optimized hover handlers
   const handleMouseEnter = useCallback(() => setIsHovering(true), []);
   const handleMouseLeave = useCallback(() => setIsHovering(false), []);
+  const handleDownload = () => {
+      const link = document.createElement("a");
+      link.href = "https://github.com/ariyha/ariyha.github.io/raw/master/Nithish_Ariyha_Resume_SDE.pdf";
+      link.download = "Nithish_Ariyha_Resume_SDE.pdf";
+      link.click();
+    };
+      
 
   // Optimized scroll handler
   const handleScroll = useCallback(() => {
@@ -500,6 +507,7 @@ useEffect(() => {
                     className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center font-mono border border-teal-500/50 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/25 group hover:scale-105"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
+                    onClick={handleDownload}
                   >
                     <Download className="mr-2 group-hover:animate-bounce" size={20} />
                     Download Resume
